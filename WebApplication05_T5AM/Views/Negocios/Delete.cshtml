@@ -1,0 +1,68 @@
+﻿@model WebApplication05_T5AM.Models.Cliente
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Está seguro de que desea eliminar?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idcliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idcliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombrecia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombrecia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idpais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idpais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar", "Index",null,new { @class="btn btn-default"})
+        </div>
+    }
+</div>
+
+<div>
+    @ViewBag.mensaje
+</div>
